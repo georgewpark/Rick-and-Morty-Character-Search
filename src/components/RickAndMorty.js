@@ -51,10 +51,10 @@ class RickAndMorty extends Component {
                     <h1 className="heading">Rick <span>And</span> Morty</h1>
                 </header>
                 <main>
-                    <SearchInput handleSearchInput={e => this.handleSearchInput(e.target.value.replace(" ", "+"))} />
-                    {this.state.searching ? <div className="search-loader" /> : null}
-                    {this.state.searched && !this.state.searching ? <SearchOutput characters={this.state.characters} firstCharacterRef={this.firstCharacterRef} /> : null}
-                    {this.state.totalPages > 1 && !this.state.searching ? <PageNavigation page={this.state.page} totalPages={this.state.totalPages} changePage={this.changePage} /> : null}
+                    <SearchInput handleSearchInput={ e => this.handleSearchInput(e.target.value.replace(" ", "+")) } />
+                    { this.state.searching ? <div className="search-loader" /> : null }
+                    { this.state.searched && !this.state.searching ? <SearchOutput characters={ this.state.characters } firstCharacterRef={ this.firstCharacterRef } /> : null }
+                    { this.state.totalPages > 1 && !this.state.searching ? <PageNavigation page={ this.state.page } totalPages={ this.state.totalPages } changePage={ this.changePage } /> : null }
                 </main>
             </Fragment>
         );

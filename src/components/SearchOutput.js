@@ -7,7 +7,7 @@ function SearchOutput({ characters, firstCharacterRef }) {
         <div className="search-output">
             {
                 characters.length > 0 ?
-                    characters.map((character, index) => <Character character={character} key={character.id} index={index} firstCharacterRef={firstCharacterRef} />) :
+                    characters.map((character, index) => <Character character={ character } key={ character.id } index={ index } firstCharacterRef={ firstCharacterRef } />) :
                     <p className="no-results">No Results Found</p>
             }
         </div>
