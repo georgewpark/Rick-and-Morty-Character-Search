@@ -1,0 +1,9 @@
+.loader {
+  width: 3.125rem;
+  height: 3.125rem;
+  border: 0.25rem solid var(--white);
+  border-top-color: transparent;
+  border-radius: 50%;
+  margin: 0 auto;
+  animation: spin 500ms linear infinite;
+}

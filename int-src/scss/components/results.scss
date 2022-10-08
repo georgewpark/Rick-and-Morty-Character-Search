@@ -1,0 +1,13 @@
+.results {
+  max-width: 47rem;
+  margin: 0 auto 1.25rem;
+
+  &__info {
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+  }
+
+  &__message {
+    font-size: 1.875rem;
+  }
+}

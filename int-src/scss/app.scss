@@ -1,0 +1,12 @@
+// Base
+@import './base/reset';
+@import './base/base';
+@import './base/animations';
+
+// Components
+@import './components/header';
+@import './components/search';
+@import './components/results';
+@import './components/loader';
+@import './components/character';
+@import './components/pagination';
