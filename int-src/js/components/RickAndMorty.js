@@ -35,6 +35,8 @@ const RickAndMorty = () => {
   }
 
   useEffect(() => {
+    const fetchController = new AbortController()
+
     fetch(`${apiUrl}?page=${page}&name=${searchTerm}`)
       .then(res => res.json())
       .then(data => {
@@ -58,6 +60,8 @@ const RickAndMorty = () => {
         setCharacters([])
       })
       .finally(() => setSearching(false))
+
+    return () => fetchController.abort()
   }, [searchTerm, page])
 
   useEffect(() => {
