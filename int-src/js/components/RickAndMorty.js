@@ -36,8 +36,9 @@ const RickAndMorty = () => {
 
   useEffect(() => {
     const fetchController = new AbortController()
+    const { signal } = fetchController
 
-    fetch(`${apiUrl}?page=${page}&name=${searchTerm}`)
+    fetch(`${apiUrl}?page=${page}&name=${searchTerm}`, { signal })
       .then(res => res.json())
       .then(data => {
         if (data.error) {
