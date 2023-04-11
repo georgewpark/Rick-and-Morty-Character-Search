@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import { useDebounce } from '../hooks/useDebounce'
 import { Character } from '../types/types'
 import Header from './Header'
 import Search from './Search'
@@ -19,12 +20,12 @@ const RickAndMorty = () => {
 
   const apiUrl = 'https://rickandmortyapi.com/api/character/'
 
-  const handleSearchInput = (value: string): void => {
+  const handleSearchInput = useDebounce((value: string): void => {
     setPage(1)
     setSearchTerm(value)
     setSearching(true)
     setSearched(true)
-  }
+  }, 800)
 
   const handlePageChange = (page: number): void => {
     setPage((prevPage: number) => prevPage + page)
