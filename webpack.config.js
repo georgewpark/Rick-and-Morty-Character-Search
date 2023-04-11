@@ -1,16 +1,16 @@
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
-const TerserPlugin = require('terser-webpack-plugin')
+const path = require("path")
+const HtmlWebpackPlugin = require("html-webpack-plugin")
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin")
+const TerserPlugin = require("terser-webpack-plugin")
 
 module.exports = {
   entry: {
-    app: path.resolve(__dirname, 'int-src/index.js')
+    app: path.resolve(__dirname, "int-src/index.js")
   },
   output: {
-    path: path.resolve(__dirname, 'int-dist'),
-    filename: 'js/[name].js',
+    path: path.resolve(__dirname, "int-dist"),
+    filename: "js/[name].js",
     clean: true
   },
   devServer: {
@@ -25,7 +25,7 @@ module.exports = {
         test: /\.html$/,
         use: [
           {
-            loader: 'html-loader',
+            loader: "html-loader",
             options: {
               interpolate: true
             }
@@ -36,39 +36,43 @@ module.exports = {
         test: /\.scss$/,
         use: [
           MiniCssExtractPlugin.loader,
-          'css-loader',
+          "css-loader",
           {
-            loader: 'postcss-loader',
+            loader: "postcss-loader",
             options: {
               postcssOptions: {
                 plugins: [
                   [
-                    'postcss-preset-env',
+                    "postcss-preset-env",
                     {
-                      browsers: 'last 2 versions'
+                      browsers: "last 2 versions"
                     }
                   ],
                 ],
               }
             }
           },
-          'sass-loader'
+          "sass-loader"
         ]
       },
       {
-        test: /\.(js|jsx)$/,
+        test: /\.(js|ts)x?$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
+          loader: "babel-loader",
           options: {
             presets: [
-              '@babel/preset-env',
-              ['@babel/preset-react', { 'runtime': 'automatic' }]
+              "@babel/preset-env",
+              ["@babel/preset-react", { "runtime": "automatic" }],
+              "@babel/preset-typescript"
             ]
           }
         }
       }
     ],
+  },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.jsx', '.js'],
   },
   optimization: {
     minimizer: [
@@ -78,10 +82,10 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'css/[name].css'
+      filename: "css/[name].css"
     }),
     new HtmlWebpackPlugin({
-      template: 'int-src/html/index.html',
+      template: "int-src/html/index.html",
       minify: false,
       hash: true
     })

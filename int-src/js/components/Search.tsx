@@ -1,4 +1,10 @@
-const Search = ({ handleSearchInput }) => {
+import { ChangeEvent } from "react"
+
+type SearchProps = {
+  handleSearchInput: (e: ChangeEvent<HTMLInputElement>) => void
+}
+
+const Search = ({ handleSearchInput }: SearchProps) => {
   return (
     <div className='search'>
       <label htmlFor='search' className='search__label'>
@@ -10,7 +16,7 @@ const Search = ({ handleSearchInput }) => {
         className='search__input'
         placeholder='e.g. rick'
         spellCheck='false'
-        onChange={ handleSearchInput }
+        onChange={handleSearchInput}
       />
     </div>
   )
