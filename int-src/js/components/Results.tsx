@@ -1,6 +1,6 @@
 import { RefObject } from 'react'
 import { Character } from '../types/types'
-import CharacterItem from './Character'
+import CharacterItem from './CharacterItem'
 import Loader from './Loader'
 
 type ResultsProps = {
