@@ -2,12 +2,16 @@ import { RefObject } from 'react'
 import { Character } from '../types/types'
 
 type CharacterProps = {
-  character: Character,
-  firstCharacter: RefObject<HTMLElement>,
-  index: number,
+  character: Character
+  firstCharacter: RefObject<HTMLElement>
+  index: number
 }
 
-const CharacterItem = ({ character, firstCharacter, index }: CharacterProps) => {
+const CharacterItem = ({
+  character,
+  firstCharacter,
+  index,
+}: CharacterProps) => {
   return (
     <details className='character'>
       <summary

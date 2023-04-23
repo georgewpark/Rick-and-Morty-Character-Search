@@ -74,9 +74,7 @@ const RickAndMorty = () => {
     <>
       <Header />
       <main>
-        <Search
-          handleSearchInput={e => handleSearchInput(e.target.value)}
-        />
+        <Search handleSearchInput={e => handleSearchInput(e.target.value)} />
         <Results
           page={page}
           totalPages={totalPages}
@@ -86,16 +84,14 @@ const RickAndMorty = () => {
           searching={searching}
           error={error}
         />
-        {
-          !searching && totalPages > 1 && (
-            <Pagination
-              page={page}
-              totalPages={totalPages}
-              prevPage={() => handlePageChange(-1)}
-              nextPage={() => handlePageChange(1)}
-            />
-          )
-        }
+        {!searching && totalPages > 1 && (
+          <Pagination
+            page={page}
+            totalPages={totalPages}
+            prevPage={() => handlePageChange(-1)}
+            nextPage={() => handlePageChange(1)}
+          />
+        )}
       </main>
     </>
   )
