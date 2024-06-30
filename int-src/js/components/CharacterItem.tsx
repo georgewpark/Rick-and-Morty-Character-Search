@@ -10,7 +10,7 @@ type CharacterProps = {
 const CharacterItem = ({
   character,
   firstCharacter,
-  index,
+  index
 }: CharacterProps) => {
   return (
     <details className='character'>

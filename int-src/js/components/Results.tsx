@@ -20,7 +20,7 @@ const Results = ({
   firstCharacter,
   totalCharacters,
   searching,
-  error,
+  error
 }: ResultsProps) => {
   return (
     <div className='results' aria-live='polite'>

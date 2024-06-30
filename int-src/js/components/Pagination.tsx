@@ -9,7 +9,7 @@ const Pagination = ({
   page,
   totalPages,
   prevPage,
-  nextPage,
+  nextPage
 }: PaginationProps) => {
   return (
     <nav className='pagination' aria-label='page navigation'>

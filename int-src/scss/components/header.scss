@@ -5,8 +5,10 @@
     line-height: 1;
     color: var(--dark-cyan);
     margin: 1.25rem 0 1.5625rem;
-    text-shadow: 0.02em 0.02em 0.02em var(--green),
-      -0.02em -0.02em 0.02em var(--green), 0 0 0.2em var(--green);
+    text-shadow:
+      0.02em 0.02em 0.02em var(--green),
+      -0.02em -0.02em 0.02em var(--green),
+      0 0 0.2em var(--green);
 
     span {
       font-size: 0.5em;
