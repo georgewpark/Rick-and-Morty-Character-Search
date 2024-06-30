@@ -23,37 +23,36 @@ const Results = ({
   error
 }: ResultsProps) => {
   return (
-    <div className='results' aria-live='polite'>
-      {searching ? (
-        <Loader />
-      ) : (
+    <section
+      className='results'
+      aria-label='character results'
+      aria-live='polite'
+    >
+      {searching && <Loader />}
+      {!searching && characters.length > 0 && (
         <>
-          {characters.length > 0 ? (
-            <>
-              <p className='results__info'>
-                Showing {(page - 1) * characters.length + 1}-
-                {page === totalPages
-                  ? totalCharacters
-                  : page * characters.length}{' '}
-                of {totalCharacters} characters
-              </p>
-              {characters.map((character, index) => (
-                <CharacterItem
-                  character={character}
-                  key={character.id}
-                  index={index}
-                  firstCharacter={firstCharacter}
-                />
-              ))}
-            </>
-          ) : error ? (
-            <p className='results__message'>Error Retrieving Characters</p>
-          ) : (
-            <p className='results__message'>No Characters Found</p>
-          )}
+          <p className='results__info'>
+            Showing {(page - 1) * characters.length + 1}-
+            {page === totalPages ? totalCharacters : page * characters.length}{' '}
+            of {totalCharacters} characters
+          </p>
+          {characters.map((character, index) => (
+            <CharacterItem
+              character={character}
+              key={character.id}
+              index={index}
+              firstCharacter={firstCharacter}
+            />
+          ))}
         </>
       )}
-    </div>
+      {!searching && !error && characters.length === 0 && (
+        <p className='results__message'>No Characters Found</p>
+      )}
+      {!searching && error && (
+        <p className='results__message'>Error Retrieving Characters</p>
+      )}
+    </section>
   )
 }
 

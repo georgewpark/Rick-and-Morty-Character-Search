@@ -6,7 +6,7 @@ type SearchProps = {
 
 const Search = ({ handleSearchInput }: SearchProps) => {
   return (
-    <div className='search'>
+    <section className='search' aria-label='character search'>
       <label htmlFor='search' className='search__label'>
         Character Search:
       </label>
@@ -18,7 +18,7 @@ const Search = ({ handleSearchInput }: SearchProps) => {
         spellCheck='false'
         onChange={handleSearchInput}
       />
-    </div>
+    </section>
   )
 }
 
