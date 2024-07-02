@@ -1,10 +1,10 @@
-import { useState, useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useDebounce } from '../hooks/useDebounce'
 import { Character } from '../types/types'
 import Header from './Header'
-import Search from './Search'
-import Results from './Results'
 import Pagination from './Pagination'
+import Results from './Results'
+import Search from './Search'
 
 const RickAndMorty = () => {
   const [page, setPage] = useState(1)
