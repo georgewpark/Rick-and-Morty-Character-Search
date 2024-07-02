@@ -1,6 +1,6 @@
 # Rick And Morty Character Search
 
-This project demonstrates how React and the fetch API can be used to retrieve and display character information fetched from the [Rick & Morty API](https://rickandmortyapi.com).
+This project demonstrates how React and the fetch API can be used to retrieve and display character information fetched from the [Rick And Morty API](https://rickandmortyapi.com).
 
 ![Rick And Morty Character Search Demo](demo-image.jpg 'Rick And Morty Character Search Demo')
 
