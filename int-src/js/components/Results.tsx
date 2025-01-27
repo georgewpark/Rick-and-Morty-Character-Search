@@ -32,8 +32,11 @@ const Results = ({
       {!searching && characters.length > 0 && (
         <>
           <p className='results__info'>
-            Showing {(page - 1) * characters.length + 1}-
-            {page === totalPages ? totalCharacters : page * characters.length}{' '}
+            Showing{' '}
+            {page === totalPages
+              ? totalCharacters - (characters.length - 1)
+              : (page - 1) * characters.length + 1}
+            -{page === totalPages ? totalCharacters : page * characters.length}{' '}
             of {totalCharacters} characters
           </p>
           {characters.map((character, index) => (
